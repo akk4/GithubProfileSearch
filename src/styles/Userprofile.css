@@ -1,0 +1,23 @@
+.userprofile
+{
+    margin-top:20px;
+    display: block;
+    border: 1px solid gray;
+    /* background:url('https://avatars3.githubusercontent.com/u/1598417?v=4') no-repeat ; */
+    background-color: white;
+    width:80%;
+    margin:0 auto;
+}
+.userUL
+{
+  list-style-type: none;  
+}
+.userLI
+{
+  color: blue;
+  margin:0 0 10px 0; 
+}
+.heading
+{
+  border : 1px solid gray;
+}
