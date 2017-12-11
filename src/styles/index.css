@@ -37,17 +37,21 @@ h1{
 }
 .maincontent
 {
-    height: 60px;
+    height: 100px;
     background-color: black;
 }
-.username,.mainlinks
+.mainlinks
 {
     display: inline-block;
     padding: 20px;
+    width: 300px;
+    padding: 12px;
 }
 .username
 {
-margin-left:700px;
+margin-left:500px;
+display: inline-block;
+padding: 20px;
 }
 .liclass
 {
