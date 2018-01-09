@@ -3,7 +3,6 @@
     margin-top:20px;
     display: block;
     border: 1px solid gray;
-    /* background:url('https://avatars3.githubusercontent.com/u/1598417?v=4') no-repeat ; */
     background-color: white;
     width:80%;
     margin:0 auto;
@@ -16,8 +15,12 @@
 {
   color: blue;
   margin:0 0 10px 0; 
+  height:150px;
 }
-.heading
+.avatar
 {
-  border : 1px solid gray;
+  padding: 15px;
+  text-align: center;
+  background-color:whitesmoke;
 }
+

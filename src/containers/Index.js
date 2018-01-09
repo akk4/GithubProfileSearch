@@ -6,15 +6,17 @@ import Userprofile from '../components/Userprofile';
 import Repositories from '../components/Repositories';
 import Gists from '../components/Gists';
 import Gistfile from '../components/GistFiles';
+import RepoInfo from '../components/RepoInfo';
 
 ReactDOM.render((<Router >
-        <div>
-            <App/>
-             <Switch>
-               <Route path="/user" component={Userprofile} />
-               <Route path="/repos" component={Repositories} />
-               <Route path="/gists/:fileId" component={Gistfile}/>
-               <Route path="/gists" component={Gists} />
-             </Switch>
-    </div>
-    </Router>), document.getElementById('root'));
+  <div>
+    <App />
+    <Switch>
+      <Route path="/user" component={Userprofile} />
+      <Route path="/repos/:reponame" component={RepoInfo} />
+      <Route path="/repos" component={Repositories} />
+      <Route path="/gists/:fileId" component={Gistfile} />
+      <Route path="/gists" component={Gists} />
+    </Switch>
+  </div>
+</Router>), document.getElementById('root'));

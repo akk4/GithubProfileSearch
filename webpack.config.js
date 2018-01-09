@@ -31,6 +31,10 @@ module.exports = {
         test: /\.js$/,
         include: '/src',
         loader: 'eslint-loader'
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)$/,
+        loader: 'file?name=material-design-icons/iconfont/[name].[ext]'
       }
     ]
   },

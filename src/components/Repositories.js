@@ -1,10 +1,15 @@
 import React from 'react';
 import '../styles/Repositories.css';
+import { List, ListItem } from 'material-ui/List';
+import Divider from 'material-ui/Divider';
+import { Link } from 'react-router-dom';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 
 export default class Repositories extends React.Component {
   constructor() {
     super();
-    this.state = { username: 'kishankanugula', userrepos: [] };
+    this.state = { username: localStorage.getItem('USER_NAME'), userrepos: [] };
   }
   componentDidMount() {
     fetch(`https://api.github.com/users/${localStorage.getItem('USER_NAME')}/repos`)
@@ -16,15 +21,38 @@ export default class Repositories extends React.Component {
       });
   }
   render() {
+    const style1 = {
+      color: 'black',
+      fontSize: 20,
+      padding: 10,
+    };
+    const style2 = {
+      fontSize: 12,
+      padding: 10,
+      color: 'gray'
+    };
     return (
-      <div className="userrepos">
-        <div className="heading"><h1>{localStorage.getItem('USER_NAME')}-Repositories</h1></div>
-        {
-          this.state.userrepos.map(obj => <ul className= "repoUL" key={obj.id}>
-              <li className="repoLI" key={obj.id}>{obj.name}</li>
-              <li className="repoLI" key ={obj.id}>{obj.description}</li></ul>)
-        }
-      </div>
+      <MuiThemeProvider>
+        <div className="userrepos">
+          <List className="repoUL">
+            <div >
+              {
+                this.state.userrepos.map((obj) => {
+                  const date = new Date(obj.updated_at).toDateString();
+                  return <div>
+                    <ListItem style={{ height: 120 }} key={obj.id} >
+                      <div style={style1} className="repoLI"><Link to={{ pathname: `repos/${obj.name}` }}>{obj.name}</Link></div>
+                      <div style={style2}>{obj.description}</div>
+                      <div style={style2}>Updated on {date}</div>
+                      <Divider></Divider>
+                    </ListItem>
+                  </div>
+                })
+              }
+            </div>
+          </List>
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
