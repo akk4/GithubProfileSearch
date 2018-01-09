@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import '../styles/GistFiles.css';
-
+import Divider from 'material-ui/Divider';
+import IconButton from 'material-ui/IconButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import ArrowBackIcon from 'material-ui-icons/ArrowBack';
 
 class Gistfile extends React.Component {
   constructor(props) {
@@ -18,21 +21,30 @@ class Gistfile extends React.Component {
         });
       });
   }
+  goBack() {
+    this.props.history.goBack();
+  }
   render() {
     const { files } = this.state;
-    const { username } = this.props.location.state;
+    const { goBack } = this.props;
     return (
-      <div className="content">
-        {Object.keys(files).map(name =>
-        <ul key=""><label className="label">{ `${username} / ${name}`}</label><li className="file-li">{files[name].content}</li></ul>)}
-      </div>
+      <MuiThemeProvider>
+        <div className="content">
+          <IconButton onClick={this.goBack.bind(this)} tooltip="go back and hold see the history"><ArrowBackIcon /></IconButton>
+          {Object.keys(files).map(name => <div>
+            <div style={{ paddingLeft: 30, paddingRight: 30 }}><h3 >{name}</h3></div>
+            <div style={{ paddingLeft: 30, paddingRight: 30 }}><p style={{ color: 'gray', border: '1px solid black', padding: 15 }}>{files[name].content}</p></div>
+            <Divider></Divider>
+          </div>)}
+        </div>
+      </MuiThemeProvider>
     );
   }
 }
-
 Gistfile.propTypes = {
   match: PropTypes.object.isRequired,
   state: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired
+  location: PropTypes.string.isRequired,
+  goBack: PropTypes.func.isRequired
 };
 export default Gistfile;

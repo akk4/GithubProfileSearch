@@ -1,25 +1,22 @@
 .userrepos
 {
-    margin-top:20px;
-    display: block;
-    border: 1px solid gray;
-    /* background:url('https://avatars3.githubusercontent.com/u/1598417?v=4') no-repeat ; */
-    background-color: white;
-    width:80%;
-    margin:0 auto;
+  margin-top:20px;
+  display: block;
+  border: 1px solid gray;
+  background-color: white;
+  width:80%;
+  margin:0 auto;
 }
 .repoUL
 {
   list-style-type: none;  
   margin:auto;
-  
+  border: 1px solid black;
 }
-.repoLI
+.repoLI :hover
 {
-  color: blue;
-  margin:0 0 10px 0; 
+  text-decoration:underline;
+  color:blue;
 }
-.heading
-{
-  border:1px sloid gray;
-}
+
+

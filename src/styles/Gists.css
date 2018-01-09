@@ -7,17 +7,25 @@
   width:80%;
   margin:0 auto;
 }
-.gistsli a {
-    display: inline-block;
-    padding: 8px 16px;
-    width:80px;
-    color: blue;
-}
 .gistsul
 {
-    list-style-type: none; 
+  list-style-type: none; 
+  padding: 8px ;
+  border: 1px solid gray;
+
 }
-.heading
+.gistsul :hover 
 {
-   border: 1px solid gray;
+  text-decoration:underline;
+  color:blue;
+}
+#filelink
+{
+  text-decoration: none;
+  color: black;
+  font-size: 20px;
+}
+.gistsli
+{
+  padding: 15px;
 }

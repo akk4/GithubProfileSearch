@@ -5,16 +5,11 @@
   background-color: white;
   width:80%;
   margin:0 auto;
-  
 }
 .file-li
 {
-border :1px solid gray;
-margin-top:20px;
-list-style-type: none;
-padding: 30px;
-}
-.label
-{
-  color:blue;
+  border :1px solid gray;
+  margin-top:20px;
+  list-style-type: none;
+  padding: 30px;
 }
